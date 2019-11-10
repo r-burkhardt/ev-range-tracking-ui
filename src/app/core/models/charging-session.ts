@@ -3,10 +3,10 @@ import {Serializable} from '../serializable';
 
 export class ChargingSession implements Serializable<ChargingSession> {
 
-  sessionId = '';
+  private sessionId = '';
 
   constructor (
-      public carId = '',
+      private carId = '',
       public chargeDate: Date = new Date(Date.now()), // "date": "2017/05/14",
       public distanceTraveled = 0, // "distance": 272.6
       public energyUsed = 0, // "kWh": 56

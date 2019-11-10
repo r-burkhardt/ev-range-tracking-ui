@@ -3,23 +3,16 @@ import {Serializable} from '../serializable';
 
 export class Vehicle implements Serializable<Vehicle> {
 
-  vehicleId = '';
+  private vehicleId = '';
 
   constructor (
-      public modelYear = '',
-      public modelMake = '',
-      public model = '',
-      public batteryCapacity = 0,
-      public odometerStart = 0,
-      public odometerCurrent = 0,
-  ) {
-    this.modelYear = modelYear;
-    this.modelMake = modelMake;
-    this.model = model;
-    this.batteryCapacity = batteryCapacity;
-    this.odometerStart = odometerStart;
-    this.odometerCurrent = odometerCurrent;
-  }
+      private modelYear = '',
+      private modelMake = '',
+      private model = '',
+      private batteryCapacity = 0,
+      private odometerStart = 0,
+      public odometerCurrent = odometerStart,
+  ) {}
 
   serialize (): string {
     this.vehicleId = (!this.vehicleId.length) ? undefined : this.vehicleId;
