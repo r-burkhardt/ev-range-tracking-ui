@@ -1,42 +1,46 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {ChargingSession} from '@app/core/models/charging-session';
 import {Api} from '@app/core/services/api';
 import {VehicleApi} from '@app/core/services/vehicle-api';
+import {STRINGS} from '@app/core/constants';
 
 
 @Injectable({
-  providedIn: 'root'
-})
+              providedIn: 'root',
+            })
 export class ChargeSessionApi {
 
-  private readonly baseUri = '';
+  private readonly baseUri = STRINGS.CHARGE_SESSION_URI_BASE;
 
-  constructor(private apiAccess: Api, private vehicleApi: VehicleApi) { }
+  constructor (private apiAccess: Api, private vehicleApi: VehicleApi) { }
 
-  async getChargingSessionByID(sessionId: string): Promise<ChargingSession> {
+  async getChargingSessionByID (sessionId: string): Promise<ChargingSession> {
     return new ChargingSession();
   }
 
-  async getAllChargingSessionsForVehicle(carId: string): Promise<ChargingSession[]> {
+  async getAllChargingSessionsForVehicle (carId: string): Promise<ChargingSession[]> {
     const CSArray: ChargingSession[] = [];
     return CSArray;
   }
 
-  async getChargingSessionsForDateRangeVehicle(carId: string, startDate: Date, endDate?: Date): Promise<ChargingSession[]> {
+  async getChargingSessionsForDateRangeVehicle (
+      carId: string, startDate: Date,
+      endDate?: Date,
+  ): Promise<ChargingSession[]> {
     const CSArray: ChargingSession[] = [];
     return CSArray;
   }
 
   // TODO() update vehicle current odometer
-  async postChargingSession(session: ChargingSession): Promise<string> {
+  async postChargingSession (session: ChargingSession): Promise<string> {
     return '';
   }
 
-  async putChargingSession(session: ChargingSession): Promise<boolean> {
+  async putChargingSession (session: ChargingSession): Promise<boolean> {
     return false;
   }
 
-  async deleteChargingSession(sessionId: string): Promise<boolean> {
+  async deleteChargingSession (sessionId: string): Promise<boolean> {
     return false;
   }
 }

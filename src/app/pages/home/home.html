@@ -1,0 +1,25 @@
+<h4>Home</h4>
+
+<table class="session-table">
+    <thead class="session-table__head">
+    <td>Charge Date</td>
+    <td>Distance Traveled</td>
+    <td>Energy Used</td>
+    <td>Max Range</td>
+    <td>Range</td>
+    <td>Min Range</td>
+    <td>Odometer Reading</td>
+    <td>Notes</td>
+    </thead>
+    <tr *ngFor="let session of chargeSessions" class="session-table__session-row">
+        <td>{{ session.chargeDate }}</td>
+        <td>{{ session.distanceTraveled }}</td>
+        <td>{{ session.energyUsed }}</td>
+        <td [class.session-table__session-cell--high]="session.maxPossRange > 372">
+            {{ session.maxPossRange }}</td>
+        <td>{{ session.possRange }}</td>
+        <td>{{ session.minPossRange }}</td>
+        <td>{{ session.odometerReading }}</td>
+        <td>{{ session.notes }}</td>
+    </tr>
+</table>

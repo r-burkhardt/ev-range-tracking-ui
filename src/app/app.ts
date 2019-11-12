@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.scss']
 })
 export class App {
-  title = 'ev-range-tracking';
+  title = 'EV Range Tracking';
 }

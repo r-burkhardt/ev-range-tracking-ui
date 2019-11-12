@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import {Api} from '@app/core/services/api';
 import {Vehicle} from '@app/core/models/vehicle';
+import {STRINGS} from '@app/core/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VehicleApi {
 
-  private readonly baseUri = '';
+  private readonly baseUri = STRINGS.VEHICLE_URI_BASE;
 
   constructor(private apiAccess: Api) { }
 

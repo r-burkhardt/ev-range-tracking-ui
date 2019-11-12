@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+.session-table {
+  &__head {
+    font-weight: bold;
+
+    & > td {
+      max-width: 65px;
+      padding-right: 10px;
+    }
+
+    & > td:first-child {
+      max-width: 75px;
+    }
+  }
+
+  &__session-row {
+    &:nth-child(2n+1) {
+      background: #eee;
+    }
+  }
+
+  &__session-cell {
+    &--high {
+      border: 2px solid #22c;
+    }
+  }
+}
+
+@mixin
