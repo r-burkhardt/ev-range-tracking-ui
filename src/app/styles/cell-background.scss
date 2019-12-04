@@ -1,0 +1,35 @@
+@import 'variables';
+
+$color-alphas:  ('0': 0, '5': .5, '10': .10, '15': .15, '20': .20, '25': .25, '30': .30, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1.0);
+
+$cell-properties: ('background-color', 'color', 'border-top', 'border-right', 'border-bottom', 'border-left');
+
+$default-border-width: 0;
+$default-border-style: solid;
+$default-border-color: rgb(0,0,0);
+$default-text-color: rgb(0,0,0);
+$default-background-color: rgb(255,255,255);
+
+$colors: (
+  'red':  $table-red,
+  'blue': $table-blue
+);
+
+//@mixin build-properties($properties, $) {
+//
+//}
+
+@each $color-name, $color-value in $colors {
+  @each $alpha, $alpha-value in $color-alphas {
+    .cell-back__#{$color-name}--#{$alpha} {
+      background: rgba($color-value, $alpha-value);
+      border: $default-border-width $default-border-style $default-border-color;
+      color: $default-text-color;
+      display: table-cell;
+      //text-align: inherit;
+    }
+  }
+}
+
+
+

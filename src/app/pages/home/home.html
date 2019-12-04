@@ -1,25 +1,78 @@
 <h4>Home</h4>
+<div style="max-width: 1024px; margin: 0 auto; border-radius: 16px; border:
+1px solid #000; padding: 24px;">
+<!--  <app-add-edit-vehicle [vehicleEdit]="testCar"></app-add-edit-vehicle>-->
+  <app-add-edit-charge-session></app-add-edit-charge-session>
+</div>
 
-<table class="session-table">
-    <thead class="session-table__head">
+<button mat-flat-button color="primary">Test me</button>
+<button mat-flat-button color="accent">試してください
+</button>
+<button mat-flat-button color="warn">Test me</button>
+
+<div>
+  <h3>Averages</h3>
+  <blockquote>
+    <div>
+      <span>Distance Travel</span> :
+      <span>{{ testCar.avgDistanceTraveled }}</span>
+    </div>
+    <div>
+      <span>Energy Used</span> : <span>{{ testCar.avgEnergyUsed }}</span>
+    </div>
+    <div>
+      <span>Max Range</span> : <span>{{ testCar.avgMaxPossRange }}</span>
+    </div>
+    <div>
+      <span>Range</span> : <span>{{ testCar.avgPossRange }}</span>
+    </div>
+    <div>
+      <span>Min Range</span> : <span>{{ testCar.avgMinPossRange }}</span>
+    </div>
+  </blockquote>
+</div>
+
+<table class="session-table" cellpadding="0" cellspacing="0">
+  <tr class="session-table__head">
     <td>Charge Date</td>
     <td>Distance Traveled</td>
     <td>Energy Used</td>
+    <td>Mile / kWh</td>
     <td>Max Range</td>
     <td>Range</td>
     <td>Min Range</td>
     <td>Odometer Reading</td>
     <td>Notes</td>
-    </thead>
-    <tr *ngFor="let session of chargeSessions" class="session-table__session-row">
-        <td>{{ session.chargeDate }}</td>
-        <td>{{ session.distanceTraveled }}</td>
-        <td>{{ session.energyUsed }}</td>
-        <td [class.session-table__session-cell--high]="session.maxPossRange > 372">
-            {{ session.maxPossRange }}</td>
-        <td>{{ session.possRange }}</td>
-        <td>{{ session.minPossRange }}</td>
-        <td>{{ session.odometerReading }}</td>
-        <td>{{ session.notes }}</td>
-    </tr>
+  </tr>
+  <tr *ngFor="let session of chargeSessions" class="session-table__session-row">
+    <td>{{ session.chargeDate }}</td>
+    <td class="session-table__session-cell">
+        {{ session.distanceTraveled.toFixed(1) }}</td>
+    <td class="session-table__session-cell">
+        {{ session.energyUsed.toFixed(1) }}</td>
+    <td class="session-table__session-cell">
+      {{ session.calculateMileage( session.distanceTraveled,
+        session.energyUsed ) }}
+    </td>
+    <td class="session-table__session-cell" [className]="getColorClass(
+                session.maxPossRange, testCar.maxPossRangePoints, 'max')">
+      {{ session.maxPossRange }}
+      <span class="session-table__effiency">
+        {{ session.calculateMileage( session.maxPossRange, testCar.batteryCapacity ) }}
+      </span></td>
+    <td class="session-table__session-cell" [className]="getColorClass(
+                session.possRange, testCar.possRangePoints, 'avg')">
+      {{ session.possRange }}
+      <span class="session-table__effiency">
+        {{ session.calculateMileage( session.possRange, testCar.batteryCapacity ) }}
+      </span></td>
+    <td class="session-table__session-cell" [className]="getColorClass(
+                session.minPossRange, testCar.minPossRangePoints, 'min')">
+      {{ session.minPossRange }}
+      <span class="session-table__effiency">
+        {{ session.calculateMileage( session.minPossRange, testCar.batteryCapacity ) }}
+      </span></td>
+    <td class="session-table__session-cell">{{ session.odometerReading }}</td>
+    <td>{{ session.notes }}</td>
+  </tr>
 </table>

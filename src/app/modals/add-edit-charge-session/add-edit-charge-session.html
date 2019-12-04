@@ -7,56 +7,73 @@
         <mat-form-field
             class="vehicle-form__input"
             [floatLabel]="" color="accent" appearance="outline">
-          <mat-select [(ngModel)]="vehicleEdit.modelYear" required>
-            <mat-option *ngFor="let year of getModelYears()" [value]="year">
-              {{ year }}</mat-option>
+          <mat-select [(ngModel)]="sessionEdit.chargeDate" required>
+            <mat-option value="1234">1234</mat-option>
           </mat-select>
-          <mat-label>{{ vehicleLabels.modelYear }}</mat-label>
+          <mat-label>{{ chargeSessionLabels.chargeDate }}</mat-label>
         </mat-form-field>
       </div>
       <div class="">
         <mat-form-field
             class="vehicle-form__input"
             [floatLabel]="" color="accent" appearance="outline">
-          <mat-label>{{ vehicleLabels.modelMake }}</mat-label>
+          <mat-label>{{ chargeSessionLabels.distanceTraveled }}</mat-label>
           <input matInput placeholder="Simple placeholder"
-                 [(ngModel)]="vehicleEdit.modelMake" required>
+                 [(ngModel)]="sessionEdit.distanceTraveled" required>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field
             class="vehicle-form__input"
             [floatLabel]="" color="accent" appearance="outline">
-          <mat-label>{{ vehicleLabels.model }}</mat-label>
+          <mat-label>{{ chargeSessionLabels.energyUsed }}</mat-label>
           <input matInput placeholder="Simple placeholder"
-                 [(ngModel)]="vehicleEdit.model" required>
+                 [(ngModel)]="sessionEdit.energyUsed" required>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field
             class="vehicle-form__input"
             [floatLabel]="" color="accent" appearance="outline">
-          <mat-label>{{ vehicleLabels.batteryCapacity }}</mat-label>
+          <mat-label>{{ chargeSessionLabels.maxPossRange }}</mat-label>
           <input matInput placeholder="Simple placeholder"
-                 [(ngModel)]="vehicleEdit.batteryCapacity" required>
+                 [(ngModel)]="sessionEdit.maxPossRange" required>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field
             class="vehicle-form__input"
             [floatLabel]="" color="accent" appearance="outline">
-          <mat-label>{{ vehicleLabels.epaRange }}</mat-label>
+          <mat-label>{{ chargeSessionLabels.possRange }}</mat-label>
           <input matInput placeholder="Simple placeholder"
-                 [(ngModel)]="vehicleEdit.EPARange" required>
+                 [(ngModel)]="sessionEdit.possRange" required>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field
             class="vehicle-form__input"
             [floatLabel]="" color="accent" appearance="outline">
-          <mat-label>{{ vehicleLabels.odometerStart }}</mat-label>
+          <mat-label>{{ chargeSessionLabels.minPossRange }}</mat-label>
           <input matInput placeholder="Simple placeholder"
-                 [(ngModel)]="vehicleEdit.odometerStart" required>
+                 [(ngModel)]="sessionEdit.minPossRange" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field
+            class="vehicle-form__input"
+            [floatLabel]="" color="accent" appearance="outline">
+          <mat-label>{{ chargeSessionLabels.odometerReading }}</mat-label>
+          <input matInput placeholder="Simple placeholder"
+                 [(ngModel)]="sessionEdit.odometerReading" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field
+            class="vehicle-form__input"
+            [floatLabel]="" color="accent" appearance="outline">
+          <mat-label>{{ chargeSessionLabels.notes }}</mat-label>
+          <input matInput placeholder="Simple placeholder"
+                 [(ngModel)]="sessionEdit.notes" required>
         </mat-form-field>
       </div>
     </div>
@@ -65,7 +82,7 @@
               class="vehicle-form__button">{{ globalCopy.ctaCancel }}</button>
       <button mat-flat-button color="primary" class="vehicle-form__button">{{
         globalCopy.ctaSave }}
-        </button>
+      </button>
     </div>
   </div>
 </div>

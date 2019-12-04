@@ -3,7 +3,7 @@ import {Serializable} from '../serializable';
 
 export class ChargingSession implements Serializable<ChargingSession> {
 
-  private sessionId = '';
+  private _sessionId = '';
 
   constructor (
       private carId = '',
@@ -17,6 +17,14 @@ export class ChargingSession implements Serializable<ChargingSession> {
       public notes = '', // "notes": ""
   ) {}
 
+  get sessionId(): string {
+    return this._sessionId;
+  }
+
+  set sessionId(value: string) {
+    this._sessionId = value;
+  }
+
   /**
    * Calculates the miles per kWh, by dividing a distance by the amount of
    * energy used or the capcity of the battery as passed in through the
@@ -25,8 +33,8 @@ export class ChargingSession implements Serializable<ChargingSession> {
    * @param {number} energyCapOrUse
    * @returns {number}
    */
-  calculateMileage (distance: number, energyCapOrUse: number): number {
-    return +(Math.round((distance / energyCapOrUse) * 10) / 10).toFixed(1);
+  calculateMileage (distance: number, energyCapOrUse: number): string {
+    return (Math.round((distance / energyCapOrUse) * 10) / 10).toFixed(1);
   }
 
   /**

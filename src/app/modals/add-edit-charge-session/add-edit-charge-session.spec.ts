@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddEditViewChargeSession } from './add-edit-view-charge-session';
+import { AddEditChargeSession } from './add-edit-charge-session';
 
 describe('AddEditViewChargeSessionComponent', () => {
-  let component: AddEditViewChargeSession;
-  let fixture: ComponentFixture<AddEditViewChargeSession>;
+  let component: AddEditChargeSession;
+  let fixture: ComponentFixture<AddEditChargeSession>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddEditViewChargeSession ]
+      declarations: [ AddEditChargeSession ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddEditViewChargeSession);
+    fixture = TestBed.createComponent(AddEditChargeSession);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

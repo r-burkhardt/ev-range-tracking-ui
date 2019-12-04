@@ -1,0 +1,42 @@
+{
+  "vehicleLabels": {
+    "modelYear": "Model Year",
+    "modelMake": "Make",
+    "model": "Model",
+    "batteryCapacity": "Battery Capacity",
+    "epaRange": "EPA Estimated Range",
+    "odometerStart": "Odometer Start Reading",
+    "odometerCurrent": "Current Odometer Reading",
+    "avgDistanceTraveled": "Average Travel Distance",
+    "avgEnergyUsed": "Average Energy Used",
+    "avgMaxPossRange": "Average Maximum Possible Range",
+    "avgPossRange": "Average Possible Range",
+    "avgMinPossRange": "Average Minimum Possible Range"
+  },
+  "vehicleCopy": {
+    "formAddVehicleTitle": "Add New Vehicle",
+    "formEditVehicleTitle": "Edit Vehicle"
+  },
+  "chargeSessionLabels": {
+    "chargeDate": "Charge Date",
+    "distanceTraveled": "Distance Travel",
+    "energyUsed": "Energy Used",
+    "maxPossRange": "Max Possible Range",
+    "possRange": "Possible Range",
+    "minPossRange": "Min Possible Range",
+    "odometerReading": "Odometer Reading",
+    "notes": "Notes"
+  },
+  "chargeSessionCopy": {
+    "formAddChargeSessionTitle": "Add New Charging Session",
+    "formEditChargeSessionTitle": "Edit Charging Session"
+  },
+  "global": {
+    "appName": "EV Range Tracker",
+    "addVehicle": "Add New Vehicle",
+    "eddVehicle": "Edit Vehicle",
+    "addChargingSession": "Add Charging Session",
+    "ctaCancel": "Cancel",
+    "ctaSave": "Save"
+  }
+}

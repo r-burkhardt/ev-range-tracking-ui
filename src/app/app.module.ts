@@ -11,35 +11,50 @@ import {ChargeSessions} from './pages/charge-sessions/charge-sessions';
 import {Login} from './authorization/login/login';
 import {Logout} from './authorization/logout/logout';
 import {AddEditVehicle} from './modals/add-edit-vehicle/add-edit-vehicle';
-import {AddEditViewChargeSession} from './modals/add-edit-view-charge-session/add-edit-view-charge-session';
+import {AddEditChargeSession} from './modals/add-edit-charge-session/add-edit-charge-session';
 import {UserProfile} from './pages/user-profile/user-profile';
 import {HttpClientModule} from '@angular/common/http';
+import {
+  MatButtonModule,
+  MatDialogModule, MatFormFieldModule,
+  MatInputModule, MatSelectModule, MatSnackBarModule,
+} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule(
-    {
-      declarations: [
-        App,
-        Home,
-        UserAccount,
-        VehicalSummary,
-        ChargeSessions,
-        Login,
-        Logout,
-        AddEditVehicle,
-        AddEditViewChargeSession,
-        UserProfile,
-      ],
-      imports: [
-        BrowserModule,
-        HttpClientModule,
-        AppRouting,
-        CoreModule,
-      ],
-      providers: [
-          HttpClientModule
-      ],
-      bootstrap: [App],
-    },
+  {
+    declarations: [
+      App,
+      Home,
+      UserAccount,
+      VehicalSummary,
+      ChargeSessions,
+      Login,
+      Logout,
+      AddEditVehicle,
+      AddEditChargeSession,
+      UserProfile,
+    ],
+    imports: [
+      BrowserModule,
+      BrowserAnimationsModule,
+      HttpClientModule,
+      AppRouting,
+      CoreModule,
+      MatFormFieldModule,
+      MatInputModule,
+      MatSelectModule,
+      MatDialogModule,
+      MatButtonModule,
+      MatSnackBarModule,
+      FormsModule,
+    ],
+    providers: [
+      HttpClientModule,
+    ],
+    bootstrap: [App],
+  },
 )
 export class AppModule {}

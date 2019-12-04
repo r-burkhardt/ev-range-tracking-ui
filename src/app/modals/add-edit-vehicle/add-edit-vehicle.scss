@@ -1,0 +1,78 @@
+
+@import 'src/app/styles/global';
+
+.vehicle-form {
+  &__title {
+    padding-bottom: $size-xs;
+
+    @include tablet-up {
+      padding-bottom: $size-s;
+    }
+
+    @include desktop-up {
+      padding-bottom: $size-m;
+    }
+  }
+  &__input-holder {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-gap: $size-xs;
+    padding-bottom: $size-xs;
+
+    @include tablet-up {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-gap: $size-s;
+      padding-bottom: $size-s;
+    }
+
+    @include desktop-up {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      grid-gap: $size-m;
+      padding-bottom: $size-m;
+    }
+  }
+
+  &__input  {
+    width: 100%;
+  }
+
+  &__button-holder {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+    @include tablet-up {
+      justify-content: flex-end;
+    }
+  }
+
+  &__button {
+    &:first-child {
+      margin-right: $size-xs;
+    }
+
+    @include tablet-up {
+      &:first-child {
+        margin-right: $size-s;
+      }
+    }
+
+    @include desktop-up {
+      &:first-child {
+        margin-right: $size-m;
+      }
+    }
+
+  }
+
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+  margin: 0 !important;
+  padding-bottom: 0 !important;
+}
