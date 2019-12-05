@@ -15,46 +15,52 @@ import {AddEditChargeSession} from './modals/add-edit-charge-session/add-edit-ch
 import {UserProfile} from './pages/user-profile/user-profile';
 import {HttpClientModule} from '@angular/common/http';
 import {
-  MatButtonModule,
+  MatButtonModule, MatDatepickerModule,
   MatDialogModule, MatFormFieldModule,
-  MatInputModule, MatSelectModule, MatSnackBarModule,
+  MatInputModule, MatNativeDateModule, MatSelectModule, MatSnackBarModule,
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
+import {Header} from './shared/header/header';
+import { Footer } from './shared/footer/footer';
 
 
 @NgModule(
-  {
-    declarations: [
-      App,
-      Home,
-      UserAccount,
-      VehicalSummary,
-      ChargeSessions,
-      Login,
-      Logout,
-      AddEditVehicle,
-      AddEditChargeSession,
-      UserProfile,
-    ],
-    imports: [
-      BrowserModule,
-      BrowserAnimationsModule,
-      HttpClientModule,
-      AppRouting,
-      CoreModule,
-      MatFormFieldModule,
-      MatInputModule,
-      MatSelectModule,
-      MatDialogModule,
-      MatButtonModule,
-      MatSnackBarModule,
-      FormsModule,
-    ],
-    providers: [
-      HttpClientModule,
-    ],
-    bootstrap: [App],
-  },
+    {
+      declarations: [
+        App,
+        Home,
+        UserAccount,
+        VehicalSummary,
+        ChargeSessions,
+        Login,
+        Logout,
+        AddEditVehicle,
+        AddEditChargeSession,
+        UserProfile,
+        Header,
+        Footer,
+      ],
+      imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        AppRouting,
+        CoreModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatDialogModule,
+        MatButtonModule,
+        MatSnackBarModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        FormsModule,
+      ],
+      providers: [
+        HttpClientModule,
+      ],
+      bootstrap: [App],
+    },
 )
 export class AppModule {}

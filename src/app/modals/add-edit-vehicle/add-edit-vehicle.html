@@ -7,7 +7,7 @@
         <mat-form-field
             class="vehicle-form__input"
             [floatLabel]="" color="accent" appearance="outline">
-          <mat-select [(ngModel)]="vehicleEdit.modelYear" required>
+          <mat-select [(ngModel)]="newModelYear" required>
             <mat-option *ngFor="let year of getModelYears()" [value]="year">
               {{ year }}</mat-option>
           </mat-select>
@@ -20,7 +20,7 @@
             [floatLabel]="" color="accent" appearance="outline">
           <mat-label>{{ vehicleLabels.modelMake }}</mat-label>
           <input matInput placeholder="Simple placeholder"
-                 [(ngModel)]="vehicleEdit.modelMake" required>
+                 [(ngModel)]="newModelMake" required>
         </mat-form-field>
       </div>
       <div>
@@ -29,7 +29,7 @@
             [floatLabel]="" color="accent" appearance="outline">
           <mat-label>{{ vehicleLabels.model }}</mat-label>
           <input matInput placeholder="Simple placeholder"
-                 [(ngModel)]="vehicleEdit.model" required>
+                 [(ngModel)]="newModel" required>
         </mat-form-field>
       </div>
       <div>
@@ -38,7 +38,7 @@
             [floatLabel]="" color="accent" appearance="outline">
           <mat-label>{{ vehicleLabels.batteryCapacity }}</mat-label>
           <input matInput placeholder="Simple placeholder"
-                 [(ngModel)]="vehicleEdit.batteryCapacity" required>
+                 [(ngModel)]="newBatteryCapacity" required>
         </mat-form-field>
       </div>
       <div>
@@ -47,7 +47,7 @@
             [floatLabel]="" color="accent" appearance="outline">
           <mat-label>{{ vehicleLabels.epaRange }}</mat-label>
           <input matInput placeholder="Simple placeholder"
-                 [(ngModel)]="vehicleEdit.EPARange" required>
+                 [(ngModel)]="newEPARange" required>
         </mat-form-field>
       </div>
       <div>
@@ -56,7 +56,7 @@
             [floatLabel]="" color="accent" appearance="outline">
           <mat-label>{{ vehicleLabels.odometerStart }}</mat-label>
           <input matInput placeholder="Simple placeholder"
-                 [(ngModel)]="vehicleEdit.odometerStart" required>
+                 [(ngModel)]="newOdometerStart" required>
         </mat-form-field>
       </div>
     </div>
