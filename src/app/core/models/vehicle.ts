@@ -5,16 +5,16 @@ import {RangePoints} from '@app/core/models/range-points';
 export class Vehicle implements Serializable<Vehicle> {
 
   // TODO() Use vehicleId not in constructor
-  // private _vehicleId = '';
+  private _vehicleId = '';
 
   constructor (
-      private _vehicleId = '',
       private _modelYear = '',
       private _modelMake = '',
       private _model = '',
       private _batteryCapacity = 0,
       private _EPARange = 0,
       private _odometerStart = 0,
+      private _active = true,
       public odometerCurrent = _odometerStart,
       public avgDistanceTraveled = 0, // 272.6
       public avgEnergyUsed = 0, // 56.2
@@ -85,6 +85,14 @@ export class Vehicle implements Serializable<Vehicle> {
 
   set odometerStart (value: number) {
     this._odometerStart = value;
+  }
+
+  get active (): boolean {
+    return this._active;
+  }
+
+  set active (value: boolean) {
+    this._active = value;
   }
 
   serialize (): string {

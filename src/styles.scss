@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,500,500i,700,700i,900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700|Noto+Sans+KR:300,400,500,700&display=swap&subset=japanese,korean');
-
 /* Theme and mixin imports */
 @import 'app/styles/theme';
 @import 'app/styles/global';
@@ -12,5 +11,37 @@
 
 /* Common global styles */
 * {
+  box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+  margin: 0;
+  max-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+.ev-container {
+  width: 100%;
+
+  &__content {
+    margin: 0 auto;
+    max-width: $max-page-width;
+    width: 100%;
+  }
+}
+
+.ev-vertical-align {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ev-remove-mat-margin {
+  margin: 0;
 }

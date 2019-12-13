@@ -1,8 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-// @ts-ignore
-import data from 'src/assets/content/en-us-site-copy.json';
 import {ChargingSession} from '@app/core/models/charging-session';
-import {MatDatepickerInputEvent} from '@angular/material';
+import data from '../../../assets/content/en-us-site-copy.json';
 
 
 @Component({

@@ -1,20 +1,34 @@
-* {
-  box-sizing: border-box;
+@import 'src/app/styles/global';
+
+.ev-home {
+  margin-top: $size-s;
+  margin-bottom: $size-xxl;
+
+  @include tablet-up {
+    margin-top: $size-m;
+  }
+
+  @include desktop-up {
+    margin-top: $size-xl;
+  }
 }
 
 .session-table {
+  background: white;
   &__head {
     font-weight: bold;
+  }
 
-    & > td {
-      border-bottom: 2px solid #333;
-      max-width: 75px;
-      padding: 4px 20px 4px 4px;
-      vertical-align: top;
-    }
+  &__column {
+    border-bottom: 2px solid #333;
+    padding: $size-xxxs;
+    vertical-align: bottom;
+    width: 60px;
+    max-width: 60px;
 
-    & > td:first-child {
-      max-width: 85px;
+    &--first {
+      width: 48px;
+      max-width: 48px;
     }
   }
 
@@ -33,19 +47,5 @@
 
   &__session-cell {
     text-align: right;
-    padding: 30px;
-
-    &--high {
-      border: 2px solid #22c;
-    }
-  }
-
-  &__effiency {
-    bottom: 0;
-    color: #333;
-    font-size: 12px;
-    padding: 0 4px 4px 0;
-    position: absolute;
-    right: 0;
   }
 }

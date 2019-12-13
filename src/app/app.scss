@@ -1,1 +1,25 @@
-.
+@import 'src/app/styles/global';
+
+// site-flex body stretch
+.ev-app-page {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__header-footer {
+    flex: 0 0 auto;
+
+    &--border-top {
+      border-top: 1px solid #000;
+    }
+    &--border-bottom {
+      //border-bottom: 1px solid #000;
+    }
+  }
+
+  &__body {
+    flex: 1 1 auto;
+  }
+
+}

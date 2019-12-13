@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Vehicle} from '@app/core/models/vehicle';
-// @ts-ignore
-import data from 'src/assets/content/en-us-site-copy.json';
+import data from '../../../assets/content/en-us-site-copy.json';
 
 
 @Component({

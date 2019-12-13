@@ -11,24 +11,59 @@ $default-text-color: rgb(0,0,0);
 $default-background-color: rgb(255,255,255);
 
 $colors: (
-  'red':  $table-red,
-  'blue': $table-blue
+  'red':  ("background": $table-red, "text": $table-text-white),
+  'blue': ("background": $table-blue, "text": $table-text-white)
 );
-
-//@mixin build-properties($properties, $) {
-//
-//}
 
 @each $color-name, $color-value in $colors {
   @each $alpha, $alpha-value in $color-alphas {
     .cell-back__#{$color-name}--#{$alpha} {
-      background: rgba($color-value, $alpha-value);
+      background: rgba(map_get($color-value, "background"), $alpha-value);
       border: $default-border-width $default-border-style $default-border-color;
-      color: $default-text-color;
-      display: table-cell;
-      //text-align: inherit;
+      @if $alpha-value > .69 {
+        color: map_get($color-value, "text");
+      } @else {
+        color: $default-text-color;
+      }
+      //display: table-cell;
+
+      & > span {
+        bottom: $size-xxxs;
+        @if $alpha-value > .79 {
+          color: $table-subtext-light;
+        } @else {
+          color: $table-subtext-dark;
+        }
+        font-size: 12px;
+        //padding: 0 $size-xxxs $size-xxxs 0;
+        position: absolute;
+        right: $size-xxxs;
+      }
     }
   }
+}
+
+.cell-back__default {
+  background: $default-background-color;
+  border: $default-border-width $default-border-style $default-border-color;
+  color: $default-text-color;
+  display: table-cell;
+
+  & > span {
+    bottom: $size-xxxs;
+    color: $table-subtext-dark;
+    font-size: 12px;
+    //padding: 0 $size-xxxs $size-xxxs 0;
+    position: absolute;
+    right: $size-xxxs;
+  }
+}
+
+.cell-back__yellow {
+  background: rgba($table-yellow, 1);
+  border: $default-border-width $default-border-style $default-border-color;
+  color: $table-yellow-text-red;
+  display: table-cell;
 }
 
 

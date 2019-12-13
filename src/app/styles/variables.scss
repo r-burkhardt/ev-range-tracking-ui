@@ -1,6 +1,14 @@
 /* Colors */
-$table-blue: rgb(60, 120, 216);
-$table-red: rgb(204,0,0);
+$table-blue: rgb(74, 134, 232);
+$table-red: rgb(255, 0, 0);
+$table-text-white: rgb(255, 255, 255);
+$table-yellow: rgb(255, 217, 102);
+$table-yellow-text-red: rgb(152, 0, 0);
+$table-subtext-dark: #333;
+$table-subtext-light: #ccc;
+
+
+
 
 /* Sizes for margins, paddings, and none textural spacing. */
 $size-xxxs: 4px;
@@ -12,3 +20,7 @@ $size-l: 40px;
 $size-xl: 48px;
 $size-xxl: 56px;
 $size-xxxl: 64px;
+
+/* Special sizes */
+$max-page-width: 1564px;
+$desktop-content-box-margin: 80px;

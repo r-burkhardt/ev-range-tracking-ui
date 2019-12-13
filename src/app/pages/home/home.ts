@@ -28,7 +28,6 @@ export class Home implements OnInit {
 
   async ngOnInit () {
     this.testCar = new Vehicle(
-        'j34l5657jkk3l2',
         '2017',
         'Chevrolet',
         'Bolt EV',
@@ -36,7 +35,7 @@ export class Home implements OnInit {
         238,
         11,
     );
-    ;
+    this.testCar.vehicleId = 'j34l5657jkk3l2';
 
     this.testSession = new ChargingSession(
         '',

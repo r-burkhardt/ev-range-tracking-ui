@@ -1,0 +1,45 @@
+@import 'src/app/styles/global';
+
+.ev-header {
+  //background: #388E3C;
+  border-bottom: 1px solid #000000;
+  height: $size-xxl;
+  width: 100%;
+
+  @include tablet-up {
+    height: 2 * $size-xl;
+  }
+
+  @include desktop-up {
+    height: 2 * $size-xl;
+  }
+
+  &__content {
+    height: 100%;
+    padding: 0 $size-xs;
+
+    @include tablet-up {
+      padding: 0 $size-m;
+    }
+
+    @include desktop-up {
+      padding: 0 $size-l;
+    }
+  }
+
+  &__title {
+    height: $size-xl;
+  }
+
+  &__app-name {
+    height: 100%;
+  }
+
+  &__nav {
+    height: $size-xl;
+  }
+
+  &__nav-items {
+    height: 100%;
+  }
+}
