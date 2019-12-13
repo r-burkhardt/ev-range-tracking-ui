@@ -4,7 +4,6 @@ import {RangePoints} from '@app/core/models/range-points';
 
 export class Vehicle implements Serializable<Vehicle> {
 
-  // TODO() Use vehicleId not in constructor
   private _vehicleId = '';
 
   constructor (
@@ -96,18 +95,18 @@ export class Vehicle implements Serializable<Vehicle> {
   }
 
   serialize (): string {
-    this.vehicleId = (!this.vehicleId.length) ? undefined : this.vehicleId;
+    this._vehicleId = (!this._vehicleId.length) ? undefined : this._vehicleId;
     return JSON.stringify(this);
   }
 
   deserialize (json: any): Vehicle {
-    this.vehicleId = (json.vehicleId) ? json.vehicleId : '';
-    this.modelYear = json.modelYear.toString();
-    this.modelMake = json.modelMake;
-    this.model = json.model;
-    this.batteryCapacity = +json.batteryCapacity;
-    this.EPARange = +json.EPARange;
-    this.odometerStart = +json.odometerStart;
+    this._vehicleId = (json.vehicleId) ? json.vehicleId : '';
+    this._modelYear = json.modelYear.toString();
+    this._modelMake = json.modelMake;
+    this._model = json.model;
+    this._batteryCapacity = +json.batteryCapacity;
+    this._EPARange = +json.EPARange;
+    this._odometerStart = +json.odometerStart;
     this.odometerCurrent = +json.odometerCurrent;
     this.avgDistanceTraveled = +json.avgDistanceTraveled;
     this.avgEnergyUsed = +json.avgEnergyUsed;
