@@ -1,17 +1,32 @@
 <div class="ev-container ev-header">
   <div class="ev-container__content ev-header__content">
-    <div class="ev-header__title">
-      <div class="ev-header__app-name ev-vertical-align">
-        <h1 class="mat-headline ev-remove-mat-margin">{{ globalCopy.appName }}</h1>
+    <div class="ev-header__title-menu">
+      <div class="ev-header__title">
+        <div class="ev-header__app-name ev-vertical-align">
+          <h1 class="mat-headline ev-remove-mat-margin">{{ globalCopy.appName }}</h1>
+        </div>
+      </div>
+      <div class="ev-header__nav">
+        <div class="ev-header__nav-items">
+          <div class="ev-vertical-align">
+            <a href="" mat-button color="primary">Item 1</a>
+          </div>
+          <div class="ev-vertical-align">
+            <a href="" mat-button color="primary">Item 2</a>
+          </div>
+            <div class="ev-vertical-align">
+              <a href="" mat-button color="primary">Item 3</a>
+            </div>
+              <div class="ev-vertical-align">
+                <a href="" mat-button color="primary">Item 4</a>
+              </div>
+        </div>
       </div>
     </div>
-    <div class="ev-header__nav ev-vertical-align">
-      <div class="ev-header__nav-items">
-        <a href="" mat-button color="primary">Item 1</a>
-        <a href="" mat-button color="primary">Item 2</a>
-        <a href="" mat-button color="primary">Item 3</a>
-        <a href="" mat-button color="primary">Item 4</a>
-      </div>
+
+    <div class="ev-header__user ev-vertical-align">
+      <mat-icon>account_circle</mat-icon>
     </div>
+
   </div>
 </div>

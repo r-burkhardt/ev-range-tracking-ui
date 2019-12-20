@@ -1,22 +1,23 @@
 @import 'src/app/styles/global';
 
 .ev-header {
-  //background: #388E3C;
   border-bottom: 1px solid #000000;
   height: $size-xxl;
   width: 100%;
 
   @include tablet-up {
-    height: 2 * $size-xl;
+    height: $size-xl;
   }
 
   @include desktop-up {
-    height: 2 * $size-xl;
+    height: $size-xl;
   }
 
   &__content {
     height: 100%;
     padding: 0 $size-xs;
+    display: flex;
+    justify-content: space-between;
 
     @include tablet-up {
       padding: 0 $size-m;
@@ -27,8 +28,14 @@
     }
   }
 
+  &__title-menu {
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+  }
+
   &__title {
-    height: $size-xl;
+    margin-right: $size-l;
   }
 
   &__app-name {
@@ -36,10 +43,17 @@
   }
 
   &__nav {
-    height: $size-xl;
+    height: 100%;
+    display: none;
+
+    @include desktop-up {
+      display: initial;
+    }
   }
 
   &__nav-items {
     height: 100%;
+    display: flex;
+    justify-content: flex-start;
   }
 }

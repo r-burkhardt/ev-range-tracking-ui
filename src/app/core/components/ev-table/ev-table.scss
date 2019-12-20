@@ -1,21 +1,15 @@
-@import 'src/app/styles/global';
+/* Sizes for margins, paddings, and none textural spacing. */
+$size-xxxs: 4px;
+$size-xxs: 8px;
+$size-xs: 16px;
+$size-s: 24px;
+$size-m: 32px;
+$size-l: 40px;
+$size-xl: 48px;
+$size-xxl: 56px;
+$size-xxxl: 64px;
 
-.ev-home {
-  width: 100%;
-
-  &__headline {
-    margin: 0 auto;
-    margin-top: 2 * $size-xxl;
-    width: fit-content;
-  }
-
-  &__subheadline {
-    margin: 0 auto;
-    width: fit-content;
-  }
-}
-
-.session-table {
+.ev-table {
   background: white;
   &__head {
     font-weight: bold;
@@ -32,12 +26,6 @@
       width: 48px;
       max-width: 48px;
     }
-  }
-
-  &__body {
-    //background: blue;
-    max-height: 250px;
-    overflow-y: scroll;
   }
 
   &__session-row {

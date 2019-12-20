@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,500,500i,700,700i,900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700|Noto+Sans+KR:300,400,500,700&display=swap&subset=japanese,korean');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 /* Theme and mixin imports */
 @import 'app/styles/theme';
 @import 'app/styles/global';
@@ -36,6 +38,29 @@ html {
   }
 }
 
+.ev-page {
+  width: 100%;
+
+  &__content {
+    height: 100%;
+    padding: 0 $size-xs;
+
+    @include tablet-up {
+      padding: 0 $size-xxl;
+    }
+
+    @include desktop-up {
+      padding: 0 $desktop-content-box-margin;
+    }
+  }
+
+  &__title {
+    margin: 0 auto 0 0;
+    margin-top: $size-xxl;
+    width: fit-content;
+  }
+}
+
 .ev-vertical-align {
   display: flex;
   flex-direction: column;
@@ -44,4 +69,8 @@ html {
 
 .ev-remove-mat-margin {
   margin: 0;
+}
+
+.ev-text-crop {
+  @include text-crop;
 }

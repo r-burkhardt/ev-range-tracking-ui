@@ -24,6 +24,57 @@ export class Home implements OnInit {
     'minPossRange',
   ];
 
+  tableConfig = {
+    settings: [
+      {
+        name: 'chargeDate',
+        title: 'Charge Date',
+        minWidth: '48px'
+      },
+      {
+        name: '',
+        title: 'Distance Traveled',
+        minWidth: ''
+      },
+      {
+        name: '',
+        title: 'Energy Used',
+        minWidth: ''
+      },
+      {
+        name: '',
+        title: 'Mile / kWh',
+        minWidth: ''
+      },
+      {
+        name: '',
+        title: 'Max Range',
+        minWidth: ''
+      },
+      {
+        name: '',
+        title: 'Range',
+        minWidth: ''
+      },
+      {
+        name: '',
+        title: 'Min Range',
+        minWidth: ''
+      },
+      {
+        name: '',
+        title: 'Odometer Reading',
+        minWidth: ''
+      },
+      {
+        name: '',
+        title: 'Notes',
+        minWidth: ''
+      },
+    ],
+    data: this.chargeSessions
+  };
+
   constructor (private http: HttpClient) { }
 
   async ngOnInit () {
@@ -48,8 +99,6 @@ export class Home implements OnInit {
         14568,
         '',
     );
-    // this.testCar.EPARange = 238;
-    // this.testCar.batteryCapacity = 60;
     await this.http
         .get('http://localhost:4200/assets/data/charge-data.json')
         .toPromise()

@@ -1,0 +1,53 @@
+<div>
+  <table class="ev-table" cellpadding="0" cellspacing="0">
+    <tr class="ev-table__head">
+      <td class="ev-table__column ev-table__column--first">Charge
+        Date
+      </td>
+      <td class="ev-table__column">Distance Traveled</td>
+      <td class="ev-table__column">Energy Used</td>
+      <td class="ev-table__column">Mile / kWh</td>
+      <td class="ev-table__column">Max Range</td>
+      <td class="ev-table__column">Range</td>
+      <td class="ev-table__column">Min Range</td>
+      <td class="ev-table__column">Odometer Reading</td>
+      <td class="ev-table__column">Notes</td>
+    </tr>
+    <tr *ngFor="let session of data;"
+        class="ev-table__session-row">
+      <td>{{ session.chargeDate }}</td>
+      <td class="ev-table__session-cell">
+        {{ session.distanceTraveled.toFixed( 1 ) }}</td>
+      <td class="ev-table__session-cell">
+        {{ session.energyUsed.toFixed( 1 ) }}</td>
+      <td class="ev-table__session-cell"
+          [class.cell-back__yellow]="session.calculateMileage( session.distanceTraveled,
+        session.energyUsed ) < 5"
+          [class.cell-back__blue--100]="session.calculateMileage( session.distanceTraveled,
+        session.energyUsed ) > 5.99">
+        {{ session.calculateMileage( session.distanceTraveled,
+          session.energyUsed ) }}
+      </td>
+      <td class="ev-table__session-cell" [className]="getColorClass(
+                session.maxPossRange, testCar.maxPossRangePoints, 'max')">
+        {{ session.maxPossRange }}
+        <span>
+        {{ session.calculateMileage( session.maxPossRange, testCar.batteryCapacity ) }}
+      </span></td>
+      <td class="ev-table__session-cell" [className]="getColorClass(
+                session.possRange, testCar.possRangePoints, 'avg')">
+        {{ session.possRange }}
+        <span>
+        {{ session.calculateMileage( session.possRange, testCar.batteryCapacity ) }}
+      </span></td>
+      <td class="ev-table__session-cell" [className]="getColorClass(
+                session.minPossRange, testCar.minPossRangePoints, 'min')">
+        {{ session.minPossRange }}
+        <span>
+        {{ session.calculateMileage( session.minPossRange, testCar.batteryCapacity ) }}
+      </span></td>
+      <td class="ev-table__session-cell">{{ session.odometerReading }}</td>
+      <td>{{ session.notes }}</td>
+    </tr>
+  </table>
+</div>

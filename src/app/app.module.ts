@@ -16,7 +16,7 @@ import {UserProfile} from './pages/user-profile/user-profile';
 import {HttpClientModule} from '@angular/common/http';
 import {
   MatButtonModule, MatDatepickerModule,
-  MatDialogModule, MatFormFieldModule,
+  MatDialogModule, MatFormFieldModule, MatIconModule,
   MatInputModule, MatNativeDateModule, MatSelectModule, MatSnackBarModule,
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -55,6 +55,7 @@ import { Footer } from './shared/footer/footer';
         MatSnackBarModule,
         MatDatepickerModule,
         MatNativeDateModule,
+        MatIconModule,
         FormsModule,
       ],
       providers: [

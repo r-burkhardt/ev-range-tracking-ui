@@ -1,1 +1,41 @@
-<p>vehical-summary works!</p>
+<div class="ev-container ev-page">
+  <div class="ev-container__content ev-page__content">
+    <div class="ev-page__title">
+      <h3 class="mat-title">Vehicle Summary for your {{ testCar.modelYear }}
+        {{ testCar.modelMake }} {{ testCar.model }}
+      </h3>
+    </div>
+
+    <div>
+      <div>Battery Capacity: {{ testCar.batteryCapacity }}</div>
+      <div>EPA Est. Range: {{ testCar.EPARange }}</div>
+      <div>Current Odometer: {{ testCar.odometerCurrent }}</div>
+    </div>
+
+    <div>
+      <h3>Averages</h3>
+      <blockquote>
+        <div>
+          <span>Distance Travel</span> : <span>125.7</span>
+<!--          <span>{{ testCar.avgDistanceTraveled }}</span>-->
+        </div>
+        <div>
+          <span>Energy Used</span> : <span>18.9</span>
+<!--          <span>Energy Used</span> : <span>{{ testCar.avgEnergyUsed }}</span>-->
+        </div>
+        <div>
+          <span>Max Range</span> : <span>432</span>
+<!--          <span>Max Range</span> : <span>{{ testCar.avgMaxPossRange }}</span>-->
+        </div>
+        <div>
+          <span>Range</span> : <span>372</span>
+<!--          <span>Range</span> : <span>{{ testCar.avgPossRange }}</span>-->
+        </div>
+        <div>
+          <span>Min Range</span> : <span>330</span>
+<!--          <span>Min Range</span> : <span>{{ testCar.avgMinPossRange }}</span>-->
+        </div>
+      </blockquote>
+    </div>
+  </div>
+</div>
