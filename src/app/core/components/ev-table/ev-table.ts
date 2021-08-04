@@ -1,5 +1,13 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {RangePoints} from '@app/core/models/range-points';
+import {Vehicle} from '@app/core/models/vehicle';
+
+enum Pagination {
+  Month = 'month',
+  Year = 'year',
+
+
+}
 
 @Component({
   selector: 'ev-table',
@@ -8,8 +16,9 @@ import {RangePoints} from '@app/core/models/range-points';
 })
 export class EVTable implements OnInit {
 
+  @Input() labels: any;
   @Input() data: any;
-  @Input() config: object;
+  @Input() vehicle: Vehicle;
   @Input() pagination: object;
 
 

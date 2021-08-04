@@ -13,7 +13,7 @@ export class Api {
 
   constructor(private http: HttpClient) { }
 
-  public async get(uri: string, params: HttpParams = new HttpParams()): Promise<any> {
+  public async get(uri: string, params = new HttpParams()): Promise<any> {
     return await this.http
         .get<any>(`${this.resolveBaseUrl()}${uri}`, {params})
         .toPromise();
